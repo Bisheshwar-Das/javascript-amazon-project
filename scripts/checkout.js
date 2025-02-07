@@ -6,8 +6,14 @@ import { loadProducts,loadProductsFetch } from "../data/products.js";
 // import '../data/'
 
 async function loadPage() {
-  await loadProductsFetch();
-  
+  try{
+    await loadProductsFetch();
+    const value=await new Promise((resolve,reject)=>{
+      //any other backend call which on completion will give resolve and some value, else error if any
+    });
+  }catch(error){
+    console.log("Unexpected Error: Please try again later.")
+  }
   renderOrderSummary();
   renderPaymentSummary();
 }
