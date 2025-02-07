@@ -8,9 +8,9 @@ import { loadProducts,loadProductsFetch } from "../data/products.js";
 async function loadPage() {
   try{
     await loadProductsFetch();
-    const value=await new Promise((resolve,reject)=>{
-      //any other backend call which on completion will give resolve and some value, else error if any
-    });
+    // const value=await new Promise((resolve,reject)=>{
+    //   //any other backend call which on completion will give resolve and some value, else error if any
+    // });
   }catch(error){
     console.log("Unexpected Error: Please try again later.")
   }
